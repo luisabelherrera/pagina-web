@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+ <link rel="stylesheet" type="text/css" href="CSS/login.css" />
+    <head>
+        <title>Inicio de Sesión</title>
+    </head>
+    <body>
+           <div class="container1">
+        <h2>Inicio de Sesión</h2>
+
+        <h:form>
+            <h:outputLabel for="username" value="Usuario:" />
+            <h:inputText id="username" value="#{loginBean.username}" required="true" /><br/><br/>
+
+            <h:outputLabel for="password" value="Contraseña:" />
+            <h:inputSecret id="password" value="#{loginBean.password}" required="true" /><br/><br/>
+<h:form>
+    <h:commandButton value="Iniciar sesión" action="#{loginBean.login}" styleClass="login-button1" />
+</h:form>
+
+<h:link outcome="Registro.xhtml" value="Registrarse" styleClass="login-button" />
+<h:link outcome="inicio.xhtml" value="volver" styleClass="login-button" />
+
+        </h:form>
+        
+          </div>
+    </body>
+</html>

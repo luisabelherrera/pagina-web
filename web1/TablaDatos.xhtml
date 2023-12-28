@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>UEA Ing Comp</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/estilotablas.css" />
+        <script src="js/filtro.js"></script>
+        <script src="js/tabla.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </h:head>
+
+    <h:body>
+
+
+
+        <div class="jumbotron">
+
+            <h:link outcome="inicio.xhtml" class="btn-custom" value="Volver" />
+
+
+
+            <h:form>
+                <div class="dropdown">
+                    <button class="dropdown-btn" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="1 - Cuenta y configuración">
+                        <span class="dropdown-text">Cuenta y configuración</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <h:commandButton value="Tabla usuarios"  class="dropdown-btn"  action="#{controllerManagedBean1.agregarUsuario}" />
+
+                        <h:commandButton value="Tabla usuarios" class="dropdown-btn"  action="#{controllerManagedBean1.agregarUsuario1}" />
+                        <h:commandButton value="Tabla Datos" class="dropdown-btn"   action="#{controllerManagedBean1.agregartabla2}" />
+                        <h:commandButton value="Tabla cupos" class="dropdown-btn"    action="#{controllerManagedBean1.agregartabla3}" />
+                    </div>
+                </div>
+            </h:form>
+
+
+        </div>
+
+
+        <h2 class="text-primary mt-3 mb-5 text-center" style="font-size: 40px;">Lista de asignaturas del Tecnológico Comfenalco   Facultad de Ingenieria</h2>
+
+        <div>
+
+            <label for="filtroInput">Buscar:</label>
+            <input type="text" id="filtroInput" />
+            <button id="filtroButton">Filtrar</button>
+            <button id="mostrarTodoButton">Mostrar Todo</button>
+        </div>
+
+        <div id="mensajeNoResultados" style="display: none;">
+            No se encontraron resultados.
+        </div>
+
+        <h:form style="margin-top: 20px;">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th style="background-color: yellow; color: black;">id</th>
+                        <th style="background-color: yellow; color: black;">Clave</th>
+                        <th style="background-color: yellow; color: black;">Nombre</th>
+                        <th style="background-color: yellow; color: black;">Trimestre</th>
+                        <th style="background-color: yellow; color: black;">Requisito</th>
+                        <th style="background-color: yellow; color: black;">dias</th>
+                        <th style="background-color: yellow; color: black;">lugar</th>
+                        <th style="background-color: yellow; color: black;">hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ui:repeat value="#{controllerManagedBean.ueasList}" var="uea">
+                        <tr>
+                            <td style="background-color: #ff0000; color: black;">#{uea.id}</td>
+                            <td>#{uea.clave}</td>
+                            <td>#{uea.nombre}</td>
+                            <td>#{uea.trimestre}</td>
+                            <td>#{uea.requisito}</td>
+                            <td>#{uea.dias}</td>
+                            <td>#{uea.lugar}</td>
+                            <td>#{uea.hora}</td>
+                        </tr>
+                    </ui:repeat>
+                </tbody>
+            </table>
+            <div class="mt-3">
+
+                <h:commandButton value="Agregar UEA" class="btn btn-primary mr-2"
+                                 action="#{controllerManagedBean.pedirDatosUEA_aAgregar()}" />
+                <h:commandButton value="Borrar UEA" class="btn btn-danger mr-2"
+                                 action="#{controllerManagedBean.pedirDatosUEA_aBorrar()}" />
+                <h:commandButton value="Modificar UEA" class="btn btn-warning mr-2"
+                                 action="#{controllerManagedBean.modificar()}" />
+                <h:commandButton value="Exportar Todo" class="btn btn-success" 
+                                 action="#{controllerManagedBean.exportarDatos()}" />
+                
+                
+
+            </div>
+        </h:form>
+
+    </h:body>
+
+</html>

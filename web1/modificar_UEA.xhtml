@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <link rel="stylesheet" type="text/css" href="CSS/modificar.css" />
+
+    <h:head>
+        <title>Modificación de UEA</title>
+    </h:head>
+    <h:body>
+        <h:form id="form" style="width: 100%; padding: 20px 33px;">
+            <h2 style="color: blue;">Modificación de la UEA</h2>
+            <span>Clave: </span>
+            <h:inputText value="#{controllerManagedBean.clave}"
+                         style="width:77%;" />
+            <br/><br/>
+            <span>Nombre: </span>
+            <h:inputText value="#{controllerManagedBean.nombre}"
+                         style="width:77%;" />
+            <br/><br/>
+            <span>Trimestre: </span>
+            <h:inputText value="#{controllerManagedBean.trimestre}"
+                         style="width:77%;" />
+            <br/><br/>
+            <span>Requisito: </span>
+            <h:inputText value="#{controllerManagedBean.requisito}"
+                         style="width:77%;" />
+            <br/><br/>
+            <br/><br/>
+            <div class="button-group">
+              
+                <h:outputText value="#{controllerManagedBean.mensajeModificacion}" style="color: blue;" />
+
+                <h:commandButton value="Modificar UEA" type="submit" styleClass="button-volver" action="#{controllerManagedBean.modificarUEA}" />
+                <h:commandButton value="Volver" styleClass="button-volver" action="#{controllerManagedBean.irATablaDatos}" />
+            </div>
+        </h:form>
+    </h:body>
+</html>

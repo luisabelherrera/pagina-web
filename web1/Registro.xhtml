@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<link rel="stylesheet" type="text/css"  href="CSS/registro.css" />
+<head>
+    <title>Registro de Usuario</title>
+    
+</head>
+<body>
+   <div class="container">
+        <h2>Registro de Usuario</h2>
+    <h:form>
+        <h:outputLabel for="newUsername" value="Nuevo Usuario:" />
+        <h:inputText id="newUsername" value="#{registerBean.newUsername}" required="true" /><br/><br/>
+
+        <h:outputLabel for="newPassword" value="Nueva Contraseña:" />
+        <h:inputSecret id="newPassword" value="#{registerBean.newPassword}" required="true" /><br/><br/>
+        <h:link outcome="login.xhtml" value="Volver" styleClass="login-button" />
+        <h:commandButton value="Registrarse" action="#{registerBean.register}" styleClass="login-button" />
+    </h:form>
+        
+          </div>
+</body>
+</html>

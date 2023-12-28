@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>tabla 2</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <!-- Optional Bootstrap JS CDN -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/estilotablas.css" />
+
+        <script src="js/tabla.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <style>
+   
+.detalle-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 9999;
+    max-width: 400px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.detalle-info h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #333;
+}
+
+.detalle-info p {
+    margin: 5px 0;
+}
+
+.detalle-info p strong {
+    font-weight: bold;
+}
+
+.detalle-container button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.detalle-container button:hover {
+    background-color: #0056b3;
+}
+
+
+
+        </style>
+    </h:head>
+
+    <h:body>
+   
+        
+        <div id="cuadroDetalles" class="detalle-container">
+            <span class="cerrar" onclick="ocultarDetalles()">&times;</span>
+            <div id="detallesTexto" class="detalle-info"></div>
+            <button onclick="ocultarDetalles()">Cerrar</button>
+        </div>
+
+
+
+        <h:form id="formTabla" style="margin-top: 20px;">
+            <label for="filtroInput">Buscar por:</label>
+            <select id="filtroSelect">
+                <option value="nombre">Nombre</option>
+                <option value="clave">Clave</option>
+            </select>
+            <input type="text" id="filtroInput" onkeyup="filtrarTabla()" />
+
+            <table id="tablaUEA" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Clave</th>
+                        <th>Nombre</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ui:repeat value="#{controllerManagedBean.ueasList}" var="uea">
+                        <tr>
+                            <td style="background-color: #ff0000; color: black;">#{uea.clave}</td>
+                            <td>#{uea.nombre}</td>
+                            <td>
+
+                                <button class="mostrarDetallesBtn" data-clave="#{uea.clave}" data-nombre="#{uea.nombre}" data-trimestre="#{uea.trimestre}" data-requisito="#{uea.requisito}"  data-dias="#{uea.dias}" data-lugar="#{uea.lugar}" data-hora="#{uea.hora}">Mostrar Detalles</button>
+                                <div id="detalle_#{uea.clave}" style="display: none;"> 
+                                    <p>Trimestre: #{uea.trimestre}</p>
+
+
+
+                                </div>
+                            </td>
+                        </tr>
+                    </ui:repeat>
+                </tbody>
+            </table>
+        </h:form>
+
+    </h:body>
+</html>
