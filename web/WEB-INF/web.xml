@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>UserBean</servlet-name>
+        <servlet-class>loging.UserBean</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>1</servlet-name>
+        <servlet-class>loging.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>exportarDatos</servlet-name>
+        <servlet-class>Controller.exportarDatos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>ControladorUsuarios.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet1</servlet-name>
+        <servlet-class>Controladorloging.NewServlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserBean</servlet-name>
+        <url-pattern>/UserBean</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>exportarDatos</servlet-name>
+        <url-pattern>/exportarDatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet1</servlet-name>
+        <url-pattern>/NewServlet1</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/login.xhtml</welcome-file>
+    </welcome-file-list>
+</web-app>

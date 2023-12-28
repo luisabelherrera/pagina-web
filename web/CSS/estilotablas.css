@@ -1,0 +1,210 @@
+body {
+
+    background-image: url('../imagen/resumen-superficie-texturas-muro-piedra-hormigon-blanco.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen de fondo cubra toda la ventana del navegador */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    /* Otros estilos */
+}
+
+
+
+
+.jumbotron {
+    background-image: url('../imagen/resumen-superficie-texturas-muro-piedra-hormigon-blanco.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen de fondo cubra todo el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid #ddd; /* Borde gris más claro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    text-align: center;
+    margin: 10px auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #333; /* Color del texto más oscuro */
+    height: 100px;
+}
+
+
+/* tabla */
+/* Estilo para ocultar el menú desplegable inicialmente */
+/* Estilos para el botón y el contenido del menú desplegable */
+/* Estilos para el botón y el contenido del menú desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #000000;
+  color: #ffffff; /* Cambia el color del texto a blanco */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+/* Mostrar el menú desplegable al pasar el cursor sobre el botón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos para los enlaces del menú */
+.dropdown-content a {
+  display: block;
+  border-radius: 8px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #ffffff; /* Cambia el color del texto a blanco */
+}
+
+.dropdown-content a:hover {
+   background-color: #333; /* Cambia el color de fondo al pasar el cursor */
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+.btn-custom {
+    font-size: 24px; /* Reducir el tamaño del botón */
+    padding: 10px 20px 10px 40px; /* Ajustar el padding para dar espacio al icono */
+    border-radius: 8px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+ background-color: #000000;
+    transition: all 0.3s ease;
+    margin: 10px;
+    height: 40px; /* Ajustar la altura del botón */
+    line-height: 1; /* Alinear el icono verticalmente */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-image: url('../imagen/volver.png');
+    background-size: 28px; /* Ajustar el tamaño del icono */
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.btn-custom:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom-with-image {
+font-size: 24px; /* Reducir el tamaño del botón */
+    padding: 10px 20px 10px 40px; /* Ajustar el padding para dar espacio al icono */
+    border-radius: 8px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    margin: 10px;
+    height: 40px; /* Ajustar la altura del botón */
+    line-height: 1; /* Alinear el icono verticalmente */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+   background-image: url('../imagen/intimidad.png'); /* Ruta a tu imagen */
+    background-size: 30px; /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: 10px center;
+}
+
+
+.btn-custom-with-image:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.btn-sm {
+    padding: 10px 20px;
+}
+body {
+    background-color: #ffffff; /* Cambia el color a blanco */
+}
+
+
+.table th,
+.table td {
+    color: white; /* Color del texto */
+}
+.table {
+    background-color: black; /* Fondo de la tabla */
+    color: white; /* Color del texto */
+}
+
+/* Estilo para las celdas de la tabla */
+.table th,
+.table td {
+    background-color: black; /* Fondo de las celdas */
+    color: white; /* Color del texto */
+}
+
+.botones-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.tabla-container {
+    margin-top: 20px; /* Puedes ajustar este valor según el espaciado que necesites */
+}
+/* En tu archivo CSS */
+
+
+/* estilo filtro  */
+/* Estilos para el filtro y los botones */
+label {
+    margin-right: 10px;
+}
+
+input[type="text"],
+button {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#mensajeNoResultados {
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+}

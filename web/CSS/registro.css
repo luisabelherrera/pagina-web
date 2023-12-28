@@ -1,0 +1,32 @@
+body {
+    background-image: url('../imagen/171852-la_estetica-blanco-naturaleza-polinizador-artropodos-3840x2160.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen de fondo cubra toda la ventana del navegador */
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 300px; /* Ancho deseado del contenedor */
+    margin: 0 auto; /* Margen automático para centrarlo horizontalmente */
+    text-align: center; /* Centrado del contenido interno */
+    padding-top: 50px; /* Espacio opcional desde la parte superior */
+}
+.login-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-button:hover {
+    background-color: #45a049;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}

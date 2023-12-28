@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Menú desplegable</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/estilotablas.css" />
+
+        <style>
+            body {
+                background-image: url('../imagen/resumen-superficie-texturas-muro-piedra-hormigon-blanco.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .jumbotron {
+                background-image: url('../imagen/resumen-superficie-texturas-muro-piedra-hormigon-blanco.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 15px;
+                padding: 30px;
+                border: 2px solid #ddd;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                margin: 10px auto;
+                max-width: 100%;
+                color: #333;
+                height: 100px;
+            }
+
+            .dropdown-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-btn {
+                background-color: #000000;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+
+        
+            .dropdown-btn:hover,
+            .dropdown-btn:focus {
+                color: red;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #000000;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                border-radius: 8px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content a {
+                display: block;
+                border-radius: 8px;
+                padding: 12px 16px;
+                text-decoration: none;
+                color: #ffffff;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #333;
+                color: #ffffff;
+                border-radius: 8px;
+            }
+
+            .corner-btn {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <h:link outcome="inicio.xhtml" class="btn btn-custom corner-btn" value="Volver" />
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button class="dropdown-btn" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="1 - Cuenta y configuración">
+                    <span class="dropdown-text">Carrera</span>
+                </button>
+                <div class="dropdown-content">
+                    <h:form>
+                        <h:commandButton value="tecnologo en Desarrollo de software" class="dropdown-btn" action="#{controllerManagedBean1.usuariollamardatos()}" />
+                        <h:commandButton value="Ingenieria Sistema" class="dropdown-btn" action="#{controllerManagedBean1}" />
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
